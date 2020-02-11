@@ -12,7 +12,7 @@ import Foundation
 protocol AudioPlayerDelegate: AnyObject {
     func didPlay()
     func didPause()
-    func didUpdate()
+    func didUpdate(with value: Double)
     func didFinishPlaying()
 }
 
@@ -31,6 +31,7 @@ class AudioPlayer: NSObject {
         guard let songURL = Bundle.main.url(forResource: "papaRoach", withExtension: "m4a") else { return }
         do {
             audioPlayer = try AVAudioPlayer(contentsOf: songURL)
+            audioPlayer?.isMeteringEnabled = true
             audioPlayer?.delegate = self
         } catch {
             print("Audio error: \(error.localizedDescription)")
@@ -63,7 +64,7 @@ class AudioPlayer: NSObject {
     
     private func startTimer() {
         cancelTimer()
-        timer = Timer.scheduledTimer(timeInterval: 0.03, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
+        timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(updateTimer(_:)), userInfo: nil, repeats: true)
     }
     
     func cancelTimer() {
@@ -72,7 +73,9 @@ class AudioPlayer: NSObject {
     }
     
     @objc private func updateTimer(_ timer: Timer) {
-        delegate?.didUpdate()
+        audioPlayer?.updateMeters()
+        guard let audioPlayer = self.audioPlayer else { return }
+        delegate?.didUpdate(with: Double(audioPlayer.averagePower(forChannel: 0)))
     }
 }
 

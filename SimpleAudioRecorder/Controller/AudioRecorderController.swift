@@ -90,7 +90,8 @@ extension AudioRecorderController: AudioPlayerDelegate {
         updateViews()
     }
     
-    func didUpdate() {
+    func didUpdate(with value: Double) {
+        audioVisualizer.addValue(decibelValue: value)
         updateViews()
     }
     
