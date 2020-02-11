@@ -38,7 +38,26 @@ class AudioPlayer: NSObject {
     }
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Private
+    func playPause() {
+        if isPlaying {
+            pause()
+        } else {
+            play()
+        }
+    }
+    
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Playback
+    private func play() {
+        audioPlayer?.play()
+        delegate?.didPlay()
+    }
+    
+    private func pause() {
+        audioPlayer?.pause()
+        delegate?.didPause()
+    }
 }
 
 extension AudioPlayer: AVAudioPlayerDelegate {

@@ -41,6 +41,7 @@ class AudioRecorderController: UIViewController {
         timeElapsedLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeElapsedLabel.font.pointSize, weight: .regular)
         timeRemainingLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeRemainingLabel.font.pointSize, weight: .regular)
         player.loadAudio()
+        player.delegate = self
 	}
     
     // MARK: - Recording
@@ -50,7 +51,7 @@ class AudioRecorderController: UIViewController {
     // MARK: - Actions
     
     @IBAction func togglePlayback(_ sender: Any) {
-        player.audioPlayer?.play()
+        player.playPause()
 	}
     
     @IBAction func updateCurrentTime(_ sender: UISlider) {
@@ -62,3 +63,20 @@ class AudioRecorderController: UIViewController {
     }
 }
 
+extension AudioRecorderController: AudioPlayerDelegate {
+    func didPlay() {
+        
+    }
+    
+    func didPause() {
+        
+    }
+    
+    func didUpdate() {
+        
+    }
+    
+    func didFinishPlaying() {
+        
+    }
+}
