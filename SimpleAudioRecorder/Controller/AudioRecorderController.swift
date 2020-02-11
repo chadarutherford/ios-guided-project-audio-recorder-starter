@@ -45,11 +45,21 @@ class AudioRecorderController: UIViewController {
         updateViews()
 	}
     
+    deinit {
+        player.cancelTimer()
+    }
+    
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Private
     private func updateViews() {
         playButton.isSelected = player.isPlaying
         
+        let elapsedTime = player.audioPlayer?.currentTime ?? 0
+        timeElapsedLabel.text = timeIntervalFormatter.string(from: elapsedTime)
+        
+        timeSlider.minimumValue = 0
+        timeSlider.maximumValue = Float(player.audioPlayer?.duration ?? 0)
+        timeSlider.value = Float(elapsedTime)
     }
     
     // MARK: - Recording
