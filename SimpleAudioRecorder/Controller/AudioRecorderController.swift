@@ -42,7 +42,15 @@ class AudioRecorderController: UIViewController {
         timeRemainingLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeRemainingLabel.font.pointSize, weight: .regular)
         player.loadAudio()
         player.delegate = self
+        updateViews()
 	}
+    
+    // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
+    // MARK: - Private
+    private func updateViews() {
+        playButton.isSelected = player.isPlaying
+        
+    }
     
     // MARK: - Recording
     
@@ -65,18 +73,18 @@ class AudioRecorderController: UIViewController {
 
 extension AudioRecorderController: AudioPlayerDelegate {
     func didPlay() {
-        
+        updateViews()
     }
     
     func didPause() {
-        
+        updateViews()
     }
     
     func didUpdate() {
-        
+        updateViews()
     }
     
     func didFinishPlaying() {
-        
+        updateViews()
     }
 }
