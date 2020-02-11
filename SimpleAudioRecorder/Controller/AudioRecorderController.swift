@@ -21,7 +21,8 @@ class AudioRecorderController: UIViewController {
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Properties
-	private lazy var timeIntervalFormatter: DateComponentsFormatter = {
+    let player = AudioPlayer()
+    private lazy var timeIntervalFormatter: DateComponentsFormatter = {
         // NOTE: DateComponentFormatter is good for minutes/hours/seconds
         // DateComponentsFormatter is not good for milliseconds, use DateFormatter instead)
         
@@ -39,6 +40,7 @@ class AudioRecorderController: UIViewController {
         // Use a font that won't jump around as values change
         timeElapsedLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeElapsedLabel.font.pointSize, weight: .regular)
         timeRemainingLabel.font = UIFont.monospacedDigitSystemFont(ofSize: timeRemainingLabel.font.pointSize, weight: .regular)
+        player.loadAudio()
 	}
     
     // MARK: - Recording
@@ -48,7 +50,7 @@ class AudioRecorderController: UIViewController {
     // MARK: - Actions
     
     @IBAction func togglePlayback(_ sender: Any) {
-        
+        player.audioPlayer?.play()
 	}
     
     @IBAction func updateCurrentTime(_ sender: UISlider) {

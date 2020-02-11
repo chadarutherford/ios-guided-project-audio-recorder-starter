@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		63653FE523F314960090CE5C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63653FE423F314960090CE5C /* AudioPlayer.swift */; };
+		63653FE723F317FC0090CE5C /* papaRoach.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 63653FE623F317FB0090CE5C /* papaRoach.m4a */; };
 		874D724823D1537A006F83B9 /* AudioVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874D724723D1537A006F83B9 /* AudioVisualizer.swift */; };
 		BD8D4B6A2343EB1D001432F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D4B692343EB1D001432F7 /* AppDelegate.swift */; };
 		BD8D4B6C2343EB1D001432F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D4B6B2343EB1D001432F7 /* SceneDelegate.swift */; };
@@ -20,6 +21,7 @@
 
 /* Begin PBXFileReference section */
 		63653FE423F314960090CE5C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
+		63653FE623F317FB0090CE5C /* papaRoach.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = papaRoach.m4a; sourceTree = "<group>"; };
 		874D724723D1537A006F83B9 /* AudioVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioVisualizer.swift; sourceTree = "<group>"; };
 		BD8D4B662343EB1D001432F7 /* SimpleAudioRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleAudioRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8D4B692343EB1D001432F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +51,7 @@
 				BD8D4B692343EB1D001432F7 /* AppDelegate.swift */,
 				BD8D4B6B2343EB1D001432F7 /* SceneDelegate.swift */,
 				BD8D4B722343EB1E001432F7 /* Assets.xcassets */,
+				63653FE623F317FB0090CE5C /* papaRoach.m4a */,
 				BD8D4BA52343ECF5001432F7 /* piano.mp3 */,
 				BD8D4B772343EB1E001432F7 /* Info.plist */,
 			);
@@ -183,6 +186,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BD8D4B7F2343EB38001432F7 /* Main.storyboard in Resources */,
+				63653FE723F317FC0090CE5C /* papaRoach.m4a in Resources */,
 				BD8D4B762343EB1E001432F7 /* LaunchScreen.storyboard in Resources */,
 				BD8D4BA62343ECF5001432F7 /* piano.mp3 in Resources */,
 				BD8D4B732343EB1E001432F7 /* Assets.xcassets in Resources */,

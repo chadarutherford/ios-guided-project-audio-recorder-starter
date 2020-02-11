@@ -20,8 +20,27 @@ class AudioPlayer: NSObject {
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Properties
+    var audioPlayer: AVAudioPlayer?
+    var timer: Timer?
     weak var delegate: AudioPlayerDelegate?
+    var isPlaying: Bool {
+        audioPlayer?.isPlaying ?? false
+    }
+    
+    func loadAudio() {
+        guard let songURL = Bundle.main.url(forResource: "papaRoach", withExtension: "m4a") else { return }
+        do {
+            audioPlayer = try AVAudioPlayer(contentsOf: songURL)
+            audioPlayer?.delegate = self
+        } catch {
+            print("Audio error: \(error.localizedDescription)")
+        }
+    }
     
     // --- --- --- --- --- --- --- --- --- --- --- --- --- --- ---
     // MARK: - Playback
+}
+
+extension AudioPlayer: AVAudioPlayerDelegate {
+    
 }
