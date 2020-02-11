@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63653FE523F314960090CE5C /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63653FE423F314960090CE5C /* AudioPlayer.swift */; };
 		874D724823D1537A006F83B9 /* AudioVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874D724723D1537A006F83B9 /* AudioVisualizer.swift */; };
 		BD8D4B6A2343EB1D001432F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D4B692343EB1D001432F7 /* AppDelegate.swift */; };
 		BD8D4B6C2343EB1D001432F7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD8D4B6B2343EB1D001432F7 /* SceneDelegate.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		63653FE423F314960090CE5C /* AudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		874D724723D1537A006F83B9 /* AudioVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioVisualizer.swift; sourceTree = "<group>"; };
 		BD8D4B662343EB1D001432F7 /* SimpleAudioRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SimpleAudioRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD8D4B692343EB1D001432F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,60 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		63653FDE23F3141C0090CE5C /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				BD8D4B692343EB1D001432F7 /* AppDelegate.swift */,
+				BD8D4B6B2343EB1D001432F7 /* SceneDelegate.swift */,
+				BD8D4B722343EB1E001432F7 /* Assets.xcassets */,
+				BD8D4BA52343ECF5001432F7 /* piano.mp3 */,
+				BD8D4B772343EB1E001432F7 /* Info.plist */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
+		63653FDF23F314530090CE5C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				BD8D4B7D2343EB38001432F7 /* Main.storyboard */,
+				BD8D4B742343EB1E001432F7 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		63653FE023F314640090CE5C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				63653FE123F314700090CE5C /* Custom Views */,
+				63653FDF23F314530090CE5C /* Storyboards */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		63653FE123F314700090CE5C /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				874D724723D1537A006F83B9 /* AudioVisualizer.swift */,
+			);
+			path = "Custom Views";
+			sourceTree = "<group>";
+		};
+		63653FE223F3147C0090CE5C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				BD8D4B7E2343EB38001432F7 /* AudioRecorderController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		63653FE323F314890090CE5C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				63653FE423F314960090CE5C /* AudioPlayer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BD8D4B5D2343EB1D001432F7 = {
 			isa = PBXGroup;
 			children = (
@@ -60,15 +116,10 @@
 		BD8D4B682343EB1D001432F7 /* SimpleAudioRecorder */ = {
 			isa = PBXGroup;
 			children = (
-				BD8D4B692343EB1D001432F7 /* AppDelegate.swift */,
-				BD8D4B6B2343EB1D001432F7 /* SceneDelegate.swift */,
-				BD8D4B7E2343EB38001432F7 /* AudioRecorderController.swift */,
-				874D724723D1537A006F83B9 /* AudioVisualizer.swift */,
-				BD8D4B7D2343EB38001432F7 /* Main.storyboard */,
-				BD8D4B722343EB1E001432F7 /* Assets.xcassets */,
-				BD8D4BA52343ECF5001432F7 /* piano.mp3 */,
-				BD8D4B742343EB1E001432F7 /* LaunchScreen.storyboard */,
-				BD8D4B772343EB1E001432F7 /* Info.plist */,
+				63653FE323F314890090CE5C /* Model */,
+				63653FE223F3147C0090CE5C /* Controller */,
+				63653FE023F314640090CE5C /* View */,
+				63653FDE23F3141C0090CE5C /* Support */,
 			);
 			path = SimpleAudioRecorder;
 			sourceTree = "<group>";
@@ -148,6 +199,7 @@
 				874D724823D1537A006F83B9 /* AudioVisualizer.swift in Sources */,
 				BD8D4B6A2343EB1D001432F7 /* AppDelegate.swift in Sources */,
 				BD8D4B802343EB38001432F7 /* AudioRecorderController.swift in Sources */,
+				63653FE523F314960090CE5C /* AudioPlayer.swift in Sources */,
 				BD8D4B6C2343EB1D001432F7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -286,7 +338,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = SimpleAudioRecorder/Info.plist;
+				INFOPLIST_FILE = SimpleAudioRecorder/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +356,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = SimpleAudioRecorder/Info.plist;
+				INFOPLIST_FILE = SimpleAudioRecorder/Support/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
